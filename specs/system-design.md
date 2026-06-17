@@ -15,13 +15,13 @@ examples teach the model what each label means at inference time.
 ## Architecture
 
 ```
-                 ┌─────────────────────────────────────────┐
+                 ┌──────────────────────────────────────────┐
                  │              app.py (Gradio UI)          │
                  │   Classify tab  │  Evaluate tab          │
                  └────────┬────────┴──────────┬─────────────┘
                           │                   │
                           ▼                   ▼
-              ┌───────────────────┐  ┌──────────────────────┐
+              ┌───────────────────┐  ┌───────────────────────┐
               │   classifier.py   │  │    evaluate.py        │
               │                   │  │                       │
               │ load_labeled_     │  │ run_evaluation()      │
@@ -35,20 +35,20 @@ examples teach the model what each label means at inference time.
               └────────┬──────────┘             │
                        │                        │
                        ▼                        ▼
-              ┌─────────────────────────────────────────────┐
+              ┌──────────────────────────────────────────────┐
               │              Groq LLM API                    │
               │   llama-3.3-70b-versatile                    │
               │   Single chat completion per episode         │
-              └─────────────────────────────────────────────┘
+              └──────────────────────────────────────────────┘
                        │
                        ▼
-              ┌─────────────────┐   ┌─────────────────────┐
+              ┌──────────────────┐   ┌──────────────────────┐
               │  data/           │   │  config.py           │
               │  train_episodes  │   │  VALID_LABELS        │
               │  test_episodes   │   │  GROQ_API_KEY        │
               │  my_labels.json  │   │  LLM_MODEL           │
-              │  taxonomy.md     │   └─────────────────────┘
-              └─────────────────┘
+              │  taxonomy.md     │   └──────────────────────┘
+              └──────────────────┘
 ```
 
 ---
